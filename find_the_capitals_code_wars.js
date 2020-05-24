@@ -15,6 +15,15 @@ mixed_capitals: [{"state" : 'Maine', capital: 'Augusta'}, {country: 'Spain', "ca
 capital(mixed_capitals)[1] // returns "The capital of Spain is Madrid"
 */
 
-function capital(capitals){
-  //...
+const capital = (capitals) => {
+  let capArr = [];
+  for(let i = 0; i < capitals.length; i++) {
+    if(capitals[i].state !== undefined) {
+      capArr.push('The capital of ' + capitals[i].state + ' is ' + capitals[i].capital);
+    } else {
+      capArr.push('The capital of ' + capitals[i].country + ' is ' + capitals[i].capital);
+    }
+  }
+
+  return capArr;
 }
